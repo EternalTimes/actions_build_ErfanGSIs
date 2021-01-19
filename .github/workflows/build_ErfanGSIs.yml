@@ -53,12 +53,12 @@ jobs:
        - name: Download Stock Rom & Generate GSI
          run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME --ab
        
-       - name: Zip GSI  
+       - name: Use "tar.gz" to zip GSI  
          run: |
               mkdir final
-              zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
+              tar -zcvf final/GSI.tar.gz /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
        
        - name: Upload GSI to wet
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer wet final/GSI.zip
+              ./transfer wet final/GSI.tar.gz
