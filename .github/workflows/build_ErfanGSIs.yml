@@ -68,7 +68,6 @@ jobs:
        
        - name: Use "tar.gz" to zip GSI  
          run: |
-              mkdir final
               tar -zcvf final/GSI_A.tar.gz /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
        
        - name: Upload GSI to wet
